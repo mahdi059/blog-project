@@ -39,7 +39,7 @@ class Post(models.Model):
         return self.title
 
 class Coments(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE )
+    post = models.ForeignKey(Post, on_delete=models.CASCADE , related_name="coments_name" )
     coment_authors = models.ForeignKey(User , on_delete= models.CASCADE)
     body = models.TextField()
     create_at = models.DateTimeField(auto_now_add= True)
