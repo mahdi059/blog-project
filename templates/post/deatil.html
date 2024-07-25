@@ -5,7 +5,11 @@
 <h1> deatil of {{post.title}} </h1>
 <hr>
 
-{{post.body}}
-<hr>
-{{coments.body}}
+{{item.body}}
+
+{% for com in coments %}
+
+{{com.body}}
+<br>
+{% endfor %}
 {% endblock content %}

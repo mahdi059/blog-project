@@ -15,7 +15,7 @@ def post_list(request):
 
 def post_detail(request , post_id):
     post = Post.objects.get(id=post_id)
-    coments = Coments.objects.get(id=post_id)
+    coments = post.coments_name.all()
     context = {
         "post" : post,
         "coments" : coments,
