@@ -16,9 +16,13 @@ def post_list(request):
 def post_detail(request , post_id):
     post = Post.objects.get(id=post_id)
     coments = post.coments_name.all()
+
+    like_counter = post.post_likes.count()
+
     context = {
         "post" : post,
         "coments" : coments,
+        "likes" : like_counter
     }
 
     return render(request , "post/deatil.html" , context)
@@ -36,9 +40,11 @@ def categories_list(request):
 
 def categories_detail(request , cat_id):
     category = Categories.objects.get(id=cat_id)
-
+    posts = category.posts.filter(status = 'published')
     context = {
-        "detail" : category
+        "detail" : category,
+        "posts" : posts
+        
     }
 
     return render(request , "post/category_detail.html" , context)

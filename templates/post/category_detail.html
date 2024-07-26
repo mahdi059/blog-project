@@ -4,21 +4,21 @@
    
 
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>جزئیات دسته‌بندی</title>
+    <title>category detail</title>
 </head>
 <body>
-    <h1>جزئیات دسته‌بندی</h1>
-    <h2>{{ detail.category }}</h2>
-    <p>توضیحات: {{ detail.bio }}</p>
+    <h1> category detail </h1>
+    <h2>title: {{ detail.category }}</h2>
+    <p>Description: {{ detail.bio }}</p>
     {% if detail.parents %}
-        <p>دسته‌بندی والد:  <a href="{% url 'category_detail' detail.parents.id %}">{{ detail.parents.category }}</a></p>
+        <p> Main category: <a href="{% url 'category_detail' detail.parents.id %}">{{ detail.parents.category }}</a></p>
     {% endif %}
     
     {% if detail.children.all %}
-        <h3>دسته‌بندی‌های فرزند:</h3>
+        <h3> Subcategories:</h3>
         <ul>
             {% for child in detail.children.all %}
                 <li><a href="{% url 'category_detail' child.id %}">{{ child.category }}</a></li>
@@ -26,12 +26,14 @@
         </ul>
     {% endif %}
     
-    <h3>پست‌های مرتبط:</h3>
+    <h3> Recommended posts:</h3>
     <ul>
-        {% for post in detail.posts.all %}
+        {% for post in posts %}
+            
             <li>
                 <a href="{% url 'detail' post.id %}">{{ post.title }}</a>
             </li>
+            
         {% endfor %}
     </ul>
 </body>

@@ -50,7 +50,7 @@ class Coments(models.Model):
         return f"{self.post.title} - coments"
 
 class Likes(models.Model):
-    post = models.ForeignKey(Post , on_delete= models.CASCADE)
+    post = models.ForeignKey(Post , on_delete= models.CASCADE , related_name='post_likes')
     user = models.ForeignKey(User , on_delete=models.CASCADE)
 
 class add_favorite(models.Model):

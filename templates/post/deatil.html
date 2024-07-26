@@ -5,18 +5,35 @@
 <h1> deatil of {{post.title}} </h1>
 <hr>
  
-<h2>
-    
-    {{post.body}}
-    
-</h2>
-<br>
-<br>
-<br>
+{% if post.img %}
 
+<img src="{{post.img.url}}">
+{% endif %}
+
+
+    
+  <p>  {{post.body}} </p>
+    
+
+<br>
+<br>
+<p> likes: {{likes}} </p>
+<p> coments: <br></p>
 {% for com in coments %}
+{{com.coment_authors}}: 
+<p>{{com.body}}   <br> rating:{{com.rating}} </p>
 
-{{com.body}}
-<br>
 {% endfor %}
+
+<br>
+        <p> creat_at: {{ post.creat_at|date:"Y-m-d H:i" }}</p>
+
+
+{% if post.update_at != post.creat_at %}
+
+        <p> update_date: {{ post.update_at|date:"Y-m-d H:i" }}</p>
+
+{% endif %}
+<br>
+  <p>   author: {{post.author}}  </p>
 {% endblock content %}
