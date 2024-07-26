@@ -22,3 +22,23 @@ def post_detail(request , post_id):
     }
 
     return render(request , "post/deatil.html" , context)
+
+
+def categories_list(request):
+    category = Categories.objects.all()
+    
+    context = {
+        "category" : category
+    }
+
+    return render(request , "post/category.html" , context)
+
+
+def categories_detail(request , cat_id):
+    category = Categories.objects.get(id=cat_id)
+
+    context = {
+        "detail" : category
+    }
+
+    return render(request , "post/category_detail.html" , context)
