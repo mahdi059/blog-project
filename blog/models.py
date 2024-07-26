@@ -54,7 +54,7 @@ class Likes(models.Model):
     user = models.ForeignKey(User , on_delete=models.CASCADE)
 
 class add_favorite(models.Model):
-    post = models.ForeignKey(Post , on_delete= models.CASCADE)
+    post = models.ForeignKey(Post , on_delete= models.CASCADE , related_name="favorite_post")
     user = models.ForeignKey(User , on_delete=models.CASCADE)
 
 
