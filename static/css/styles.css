@@ -265,3 +265,65 @@ body {
     color: #666;
     text-align: center;
 }
+
+/* styles.css */
+.home-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.home-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.home-container p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* styles.css */
+
+/* Reset some default styles */
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* styles.css */
+
+/* Reset default styles for the navigation menu */
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Style for the navigation menu */
+nav ul {
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    gap: 20px; /* Space between the links */
+    background-color: #333; /* Background color for the menu */
+    padding: 10px 0; /* Padding above and below the menu */
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* White text color */
+    font-size: 1.2em; /* Font size */
+    padding: 10px 15px; /* Padding inside each link */
+    border-radius: 5px; /* Rounded corners for the links */
+    transition: background-color 0.3s; /* Smooth transition for background color on hover */
+}
+
+nav a:hover {
+    background-color: #555; /* Darker background color on hover */
+}

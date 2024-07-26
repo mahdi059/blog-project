@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'category_list' %}">Categories</a></li>
+            <li><a href="{% url 'list' %}">Post List</a></li>
+            <li><a href="{% url 'favorite_post' %}">Favorite Post</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+        </ul>
+    </nav>
+
     {% block content %}{% endblock %}
 </body>
 </html>

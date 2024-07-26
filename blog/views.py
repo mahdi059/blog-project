@@ -60,3 +60,7 @@ def favorite_posts(request):
     }
     
     return render(request, 'post/favorite.html', context)
+
+def home(request):
+
+    return render(request , "post/home.html")
