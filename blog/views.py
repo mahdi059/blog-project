@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from .models import Post , Categories , Coments , Likes , add_favorite
-
-
+from django.contrib.auth.decorators import login_required
 
 def post_list(request):
 
@@ -48,3 +47,16 @@ def categories_detail(request , cat_id):
     }
 
     return render(request , "post/category_detail.html" , context)
+
+
+@login_required
+def favorite_posts(request):
+    
+    favorite_posts = add_favorite.objects.filter(user=request.user).values_list('post', flat=True)
+    posts = Post.objects.filter(id__in=favorite_posts, status=Post.PUBLISHED)
+    
+    context = {
+        'posts': posts
+    }
+    
+    return render(request, 'post/favorite.html', context)
