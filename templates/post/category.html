@@ -2,14 +2,7 @@
 
 {% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<div class="category-list">
     {% for item in category %}
 
         <li>
@@ -17,8 +10,7 @@
         </li>
    
     {% endfor %}
-</body>
-</html>
 
+    </div>
 
 {% endblock content %}

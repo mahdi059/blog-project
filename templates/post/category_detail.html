@@ -1,24 +1,20 @@
+
+
+
 {% extends "base.html" %}
 
 {% block content %}
-   
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>category detail</title>
-</head>
-<body>
-    <h1> category detail </h1>
-    <h2>title: {{ detail.category }}</h2>
+<div class="category-detail">
+    <h1>Category Detail</h1>
+    <h2>Title: {{ detail.category }}</h2>
     <p>Description: {{ detail.bio }}</p>
     {% if detail.parents %}
-        <p> Main category: <a href="{% url 'category_detail' detail.parents.id %}">{{ detail.parents.category }}</a></p>
+        <p>Main category: <a href="{% url 'category_detail' detail.parents.id %}">{{ detail.parents.category }}</a></p>
     {% endif %}
     
     {% if detail.children.all %}
-        <h3> Subcategories:</h3>
+        <h3>Subcategories:</h3>
         <ul>
             {% for child in detail.children.all %}
                 <li><a href="{% url 'category_detail' child.id %}">{{ child.category }}</a></li>
@@ -26,18 +22,13 @@
         </ul>
     {% endif %}
     
-    <h3> Recommended posts:</h3>
+    <h3>Recommended posts:</h3>
     <ul>
         {% for post in posts %}
-            
-            <li>
-                <a href="{% url 'detail' post.id %}">{{ post.title }}</a>
-            </li>
-            
+            <li><a href="{% url 'detail' post.id %}">{{ post.title }}</a></li>
         {% endfor %}
     </ul>
-</body>
-</html>
-
+</div>
 
 {% endblock content %}
+

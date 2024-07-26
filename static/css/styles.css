@@ -1,0 +1,219 @@
+/* Reset some basic elements for consistency across browsers */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Basic styling for body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Styling for the post list container */
+.post-list {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* Grid styling for the post list */
+.post-list ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Styling for each post item */
+.post-item {
+    background: #007BFF;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+/* Styling for post links */
+.post-item a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+}
+
+.post-item a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for the detail page */
+.detail-page {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+
+.detail-page h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.detail-page img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.detail-page p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.detail-page .meta-info {
+    font-size: 14px;
+    color: #999;
+    margin-top: 20px;
+}
+
+.detail-page .likes-comments {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.detail-page .comment {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.detail-page .comment-author {
+    font-weight: bold;
+    color: #333;
+}
+
+.detail-page .comment-body {
+    margin: 5px 0;
+    color: #555;
+}
+
+.detail-page .comment-rating {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Styling for the category list page */
+.category-list {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+
+.category-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.category-list li {
+    margin-bottom: 10px;
+}
+
+.category-list a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.category-list a:hover {
+    background: #0056b3;
+    color: white;
+}
+
+/* Styling for the category detail page */
+.category-detail {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+
+.category-detail h1, .category-detail h2, .category-detail h3 {
+    color: #333;
+}
+
+.category-detail h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.category-detail h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.category-detail h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.category-detail p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.category-detail a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.category-detail a:hover {
+    color: #0056b3;
+}
+
+.category-detail ul {
+    list-style: none;
+    padding: 0;
+}
+
+.category-detail ul li {
+    margin-bottom: 10px;
+}
+
+.category-detail ul li a {
+    padding: 10px;
+    border-radius: 4px;
+    background: #f0f0f0;
+    transition: background 0.3s;
+}
+
+.category-detail ul li a:hover {
+    background: #e0e0e0;
+}

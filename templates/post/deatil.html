@@ -2,38 +2,35 @@
 
 {% block content %}
 
-<h1> deatil of {{post.title}} </h1>
-<hr>
- 
-{% if post.img %}
-
-<img src="{{post.img.url}}">
-{% endif %}
-
-
+<div class="detail-page">
+    <h1>Detail of {{ post.title }}</h1>
+    <hr>
     
-  <p>  {{post.body}} </p>
+    {% if post.img %}
+        <img src="{{ post.img.url }}" alt="{{ post.title }}">
+    {% endif %}
     
+    <p>{{ post.body }}</p>
+    
+    <div class="likes-comments">
+        <p>Likes: {{ likes }}</p>
+        <p>Comments:</p>
+        {% for com in coments %}
+            <div class="comment">
+                <span class="comment-author">{{ com.coment_authors }}:</span>
+                <p class="comment-body">{{ com.body }}</p>
+                <span class="comment-rating">Rating: {{ com.rating }}</span>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div class="meta-info">
+        <p>Created at: {{ post.creat_at|date:"Y-m-d H:i" }}</p>
+        {% if post.update_at != post.creat_at %}
+            <p>Updated at: {{ post.update_at|date:"Y-m-d H:i" }}</p>
+        {% endif %}
+        <p>Author: {{ post.author }}</p>
+    </div>
+</div>
 
-<br>
-<br>
-<p> likes: {{likes}} </p>
-<p> coments: <br></p>
-{% for com in coments %}
-{{com.coment_authors}}: 
-<p>{{com.body}}   <br> rating:{{com.rating}} </p>
-
-{% endfor %}
-
-<br>
-        <p> creat_at: {{ post.creat_at|date:"Y-m-d H:i" }}</p>
-
-
-{% if post.update_at != post.creat_at %}
-
-        <p> update_date: {{ post.update_at|date:"Y-m-d H:i" }}</p>
-
-{% endif %}
-<br>
-  <p>   author: {{post.author}}  </p>
 {% endblock content %}

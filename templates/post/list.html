@@ -1,25 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% for item in post %}
-
-        <li>
-            <a href="{% url 'detail' item.id %}">{{item.title}}</a>
-        </li>
-   
-    {% endfor %}
-</body>
-</html>
-
-
-
+<div class="post-list">
+    <ul>
+        {% for item in post %}
+            <li class="post-item">
+                <a href="{% url 'detail' item.id %}">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock content %}
